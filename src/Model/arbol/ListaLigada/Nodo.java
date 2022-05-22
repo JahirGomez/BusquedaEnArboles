@@ -10,33 +10,35 @@ package Model.arbol.ListaLigada;
  * @author Jahir Gómez
  */
 public class Nodo {
-    protected Object dato;
+    protected Object nombreEgresado;
+    protected Object promedio;
     protected Nodo siguiente;
     
     public Nodo(){}
     
-    public Nodo(Object dato){
-        this.dato = dato;
+    public Nodo(Object nombreEgresado){
+        this.nombreEgresado = nombreEgresado;
         siguiente = null;
     }
     
-    public Nodo(Object dato, Nodo siguiente){
-        this.dato = dato;
+    public Nodo(Object nombreEgresado, Nodo siguiente, Object promedio){
+        this.nombreEgresado = nombreEgresado;
         this.siguiente = siguiente;
+        this.promedio = promedio;
     }
 
     /**
-     * @return the dato
+     * @return the nombreEgresado
      */
-    public Object getDato() {
-        return dato;
+    public Object getNombreEgresado() {
+        return nombreEgresado;
     }
 
     /**
-     * @param dato the dato to set
+     * @param nombreEgresado the nombreEgresado to set
      */
-    public void setDato(Object dato) {
-        this.dato = dato;
+    public void setNombreEgresado(Object nombreEgresado) {
+        this.nombreEgresado = nombreEgresado;
     }
 
     /**
@@ -53,7 +55,18 @@ public class Nodo {
         this.siguiente = siguiente;
     }
     
-    
-    
+    /**
+     * @return the promedio
+     */
+    public Object getPromedio() {
+        return promedio;
+    }
+
+    /**
+     * @param siguiente the promedio to set
+     */
+    public void setPromedio(Nodo siguiente) {
+        this.promedio = promedio;
+    }
     
 }

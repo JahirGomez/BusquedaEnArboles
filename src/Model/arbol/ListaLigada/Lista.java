@@ -23,8 +23,8 @@ public abstract class Lista {
         inicio = ultimo = null;
     }
     
-    public abstract void insertaInicio(Object dato);
-    public abstract void insertaFinal(Object dato);
+    public abstract void insertaInicio(Object nombreEgresado);
+    public abstract void insertaFinal(Object nombreEgresado);
     public abstract Object eliminaInicio();
     public abstract Object eliminaFinal();   
 
@@ -77,7 +77,7 @@ public abstract class Lista {
     public void imprimir(){
     Nodo actual = inicio;
         while (actual!=null){
-            System.out.print(actual.getDato()+ " -> ");
+            System.out.print(actual.getNombreEgresado()+ " -> ");
             actual = actual.getSiguiente();
         }
     }

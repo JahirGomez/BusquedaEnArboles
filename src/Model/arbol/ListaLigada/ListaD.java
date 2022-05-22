@@ -26,7 +26,7 @@ public abstract class ListaD extends Lista{
         if (!vacio()){
             NodoDoble actual = ultimo;
             while(actual!=null){
-                System.out.print("<-"+actual.getDato());
+                System.out.print("<-"+actual.getNombreEgresado());
                 actual = actual.getAnterior();
             }
         }

@@ -12,23 +12,23 @@ package Model.arbol.ListaLigada;
 public class ListaDoble extends ListaD{
 
     @Override
-    public void insertaInicio(Object dato) {
+    public void insertaInicio(Object nombreEgresado) {
         if (vacio())
-            inicio = ultimo = new NodoDoble(dato);
+            inicio = ultimo = new NodoDoble(nombreEgresado);
         else{
-            NodoDoble nuevo = new NodoDoble(dato,inicio,null);
+            NodoDoble nuevo = new NodoDoble(nombreEgresado,inicio,null);
             inicio.setAnterior(nuevo);
             inicio = nuevo;
         }
     }
 
     @Override
-    public void insertaFinal(Object dato) {
+    public void insertaFinal(Object nombreEgresado) {
         if (vacio()){
-           inicio = ultimo = new NodoDoble(dato);           
+           inicio = ultimo = new NodoDoble(nombreEgresado);           
         }
         else{
-          NodoDoble nuevo = new NodoDoble(dato,null,ultimo);
+          NodoDoble nuevo = new NodoDoble(nombreEgresado,null,ultimo);
           ultimo.setSiguiente(nuevo);
           ultimo = nuevo;
         }}
@@ -40,11 +40,11 @@ public class ListaDoble extends ListaD{
             System.out.println("Lista vacía");
         else{
           if (inicio == ultimo){
-            eliminado = inicio.getDato();
+            eliminado = inicio.getNombreEgresado();
             inicio = ultimo = null; 
           }
           else{
-            eliminado = inicio.getDato();
+            eliminado = inicio.getNombreEgresado();
             inicio = inicio.getSiguiente();
             inicio.setAnterior(null);
           }                
@@ -58,11 +58,11 @@ public class ListaDoble extends ListaD{
             System.out.println("Lista vacía");
         else{
             if (inicio==ultimo){
-                eliminado = ultimo.getDato();
+                eliminado = ultimo.getNombreEgresado();
                 inicio = ultimo = null;
             }
             else{
-                eliminado = ultimo.getDato();
+                eliminado = ultimo.getNombreEgresado();
                 ultimo = ultimo.getAnterior();
                 ultimo.setSiguiente(null);
             }
@@ -70,28 +70,28 @@ public class ListaDoble extends ListaD{
         return eliminado;
     }
     
-    public void insertaOrdenado(int dato){
+    public void insertaOrdenado(int nombreEgresado){
     if (vacio())
-        insertaInicio(dato);
+        insertaInicio(nombreEgresado);
     else{
         if (inicio == ultimo)
-            if (dato < (Integer)inicio.getDato())
-                insertaInicio(dato);
+            if (nombreEgresado < (Integer)inicio.getNombreEgresado())
+                insertaInicio(nombreEgresado);
             else
-                insertaFinal(dato);
+                insertaFinal(nombreEgresado);
         else{
             NodoDoble antes = null, despues = inicio;
-            while(despues!=null && dato > (Integer)despues.getDato()){
+            while(despues!=null && nombreEgresado > (Integer)despues.getNombreEgresado()){
                 antes = despues;
                 despues = despues.getSiguiente();
             }
             if (antes==null)
-                insertaInicio(dato);
+                insertaInicio(nombreEgresado);
             else
                 if (despues==null)
-                    insertaFinal(dato);
+                    insertaFinal(nombreEgresado);
                 else{
-                    NodoDoble nuevo = new NodoDoble(dato,despues,antes);
+                    NodoDoble nuevo = new NodoDoble(nombreEgresado,despues,antes);
                     antes.setSiguiente(nuevo);
                 }        
         }

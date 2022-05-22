@@ -22,7 +22,7 @@ public class Raiz {
             for (int i = 0; i<primerNodo.valores.length; i++) {
                 if (primerNodo.valores[i] == 0) {
                     primerNodo.valores[i] = valor;
-                    Lista.ingresados.add(valor);
+                    Lista.ingresados.insertaOrdenado(valor);
                     j = i;
                     ordenar(primerNodo.valores,6);
                     break;
@@ -90,7 +90,7 @@ public class Raiz {
             if (nodoA.valores[cont]==0) { 
                 nodoA.valores[cont]=valor;
                 ordenar(nodoA.valores, 5);
-                Lista.ingresados.add(valor);
+                Lista.ingresados.insertaOrdenado(valor);
                 if (cont == 2*grado) {
                     split(nodoA);
                 }

@@ -15,14 +15,14 @@ public class NodoDoble extends Nodo{
     
     public NodoDoble(){}
     
-    public NodoDoble(Object dato, NodoDoble siguiente, NodoDoble anterior){
-        this.dato = dato;
+    public NodoDoble(Object nombreEgresado, NodoDoble siguiente, NodoDoble anterior){
+        this.nombreEgresado = nombreEgresado;
         this.siguiente = siguiente;
         this.anterior = anterior;
     }
     
-    public NodoDoble(Object dato){
-        this.dato = dato;
+    public NodoDoble(Object nombreEgresado){
+        this.nombreEgresado = nombreEgresado;
         siguiente = anterior = null;
     }
 
