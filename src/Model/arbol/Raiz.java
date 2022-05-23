@@ -2,6 +2,8 @@ package Model.arbol;
 
 import java.util.ArrayList;
 
+import Model.arbol.ListaLigada.NodoDoble;
+
 public class Raiz {
     public static int grado;
     public NodoArbol primerNodo;
@@ -198,12 +200,19 @@ public class Raiz {
        public void eliminar(int valor) { //elimina de la lista el valor y vuelve a crear el arbol
         boolean encontrado = false;
         int j = 0;
-        for (int i=0; i<Lista.ingresados.size() && !encontrado; i++) {
+        NodoDoble actual = (NodoDoble) Lista.ingresados.getInicio();
+        while (!actual.equals(Lista.ingresados.getUltimo())){
+            if ((Integer) actual.getPromedio() == valor) {
+                encontrado = true;
+            }
+            //j = i;
+        }
+        /*for (int i=0; i<Lista.ingresados.size() && !encontrado; i++) {
             if (Lista.ingresados.get(i) == valor) {
                 encontrado = true;
                 j = i;
             }
-        }
+        }*/
         if (encontrado==true) {
             Lista.ingresados.remove(j);
         } else {
@@ -219,7 +228,8 @@ public class Raiz {
             insertar(o);
         }
     }
-    public boolean buscar(int valor){
+
+    /*public boolean buscar(int valor){
         boolean esta = false;
         for(int i = 0; i < Lista.ingresados.size() && !esta; i++){
             if(Lista.ingresados.get(i) == valor){
@@ -230,7 +240,44 @@ public class Raiz {
         }
         System.out.println("El elemento buscado no se encuentra en el arbol B");
         return false;
+    }*/
+
+    public boolean buscarPorNombre(int valor) {
+        boolean esta = false;
+        NodoDoble actual = (NodoDoble) Lista.ingresados.getInicio();
+        do{
+            if (actual.getNombreEgresado().equals(valor)){
+                esta = true;
+                System.out.println("El elemento buscado si se encuentra en el arbol B");
+                return esta;
+            }
+            actual = actual.getSiguiente();
+        } while (!actual.equals(Lista.ingresados.getUltimo()));
+        System.out.println("El elemento buscado no se encuentra en el arbol B");
+        return esta;
+        
     }
+
+    public boolean buscarPorPromedio(int valor) {
+        boolean esta = false;
+        NodoDoble actual = (NodoDoble) Lista.ingresados.getInicio();
+        do{
+            if (actual.getPromedio().equals(valor)){
+                esta = true;
+                System.out.println("El elemento buscado si se encuentra en el arbol B");
+                return esta;
+            }
+            actual = actual.getSiguiente();
+        } while (!actual.equals(Lista.ingresados.getUltimo()));
+        System.out.println("El elemento buscado no se encuentra en el arbol B");
+        return esta;
+        
+    }
+
+
+
+
+
     public String recorrer(NodoArbol nodo) {
          arbol += "\n";
         for (int i =0; i<2*grado+1; i++) {

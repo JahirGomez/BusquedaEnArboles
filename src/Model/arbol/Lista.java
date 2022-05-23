@@ -29,7 +29,8 @@ public class Lista {
         NodoDoble actual = (NodoDoble) this.ingresados.getInicio();
         do{
             if (actual.getPromedio().equals(valor)){
-                 esta = true;
+                esta = true;
+                break;
             }
             actual = actual.getSiguiente();
         } while (!actual.equals(this.ingresados.getUltimo()));
