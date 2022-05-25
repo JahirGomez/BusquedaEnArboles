@@ -5,6 +5,8 @@
  */
 package Model.arbol.ListaLigada;
 
+import Model.Egresado;
+
 /**
  *
  * @author Jahir Gómez
@@ -12,7 +14,7 @@ package Model.arbol.ListaLigada;
 public class ListaDoble extends ListaD{
 
     @Override
-    public void insertaInicio(Object nombreEgresado) {
+    public void insertaInicio(Egresado nombreEgresado) {
         if (vacio())
             inicio = ultimo = new NodoDoble(nombreEgresado);
         else{
@@ -23,12 +25,12 @@ public class ListaDoble extends ListaD{
     }
 
     @Override
-    public void insertaFinal(Object nombreEgresado) {
+    public void insertaFinal(Egresado e) {
         if (vacio()){
-           inicio = ultimo = new NodoDoble(nombreEgresado);           
+           inicio = ultimo = new NodoDoble(e);           
         }
         else{
-          NodoDoble nuevo = new NodoDoble(nombreEgresado,null,ultimo);
+          NodoDoble nuevo = new NodoDoble(e,null,ultimo);
           ultimo.setSiguiente(nuevo);
           ultimo = nuevo;
         }}
@@ -70,35 +72,35 @@ public class ListaDoble extends ListaD{
         return eliminado;
     }
     
-    public void insertaOrdenado(int nombreEgresado){
-    if (vacio())
-        insertaInicio(nombreEgresado);
-    else{
-        if (inicio == ultimo)
-            if (nombreEgresado < (Integer)inicio.getNombreEgresado())
-                insertaInicio(nombreEgresado);
-            else
-                insertaFinal(nombreEgresado);
+    /*public void insertaOrdenado(int nombreEgresado){
+        if (vacio())
+            insertaInicio(nombreEgresado);
         else{
-            NodoDoble antes = null, despues = inicio;
-            while(despues!=null && nombreEgresado > (Integer)despues.getNombreEgresado()){
-                antes = despues;
-                despues = despues.getSiguiente();
-            }
-            if (antes==null)
-                insertaInicio(nombreEgresado);
-            else
-                if (despues==null)
+            if (inicio == ultimo)
+                if (nombreEgresado < (Integer)inicio.getNombreEgresado())
+                    insertaInicio(nombreEgresado);
+                else
                     insertaFinal(nombreEgresado);
-                else{
-                    NodoDoble nuevo = new NodoDoble(nombreEgresado,despues,antes);
-                    antes.setSiguiente(nuevo);
-                }        
-        }
-    }                
-    }
+            else{
+                NodoDoble antes = null, despues = inicio;
+                while(despues!=null && nombreEgresado > (Integer)despues.getNombreEgresado()){
+                    antes = despues;
+                    despues = despues.getSiguiente();
+                }
+                if (antes==null)
+                    insertaInicio(nombreEgresado);
+                else
+                    if (despues==null)
+                        insertaFinal(nombreEgresado);
+                    else{
+                        NodoDoble nuevo = new NodoDoble(nombreEgresado,despues,antes);
+                        antes.setSiguiente(nuevo);
+                    }        
+            }
+        }                
+    }*/
     
-    public static void main(String[] args) {
+    /*public static void main(String[] args) {
         ListaDoble listad = new ListaDoble();
         listad.insertaInicio(1);
         listad.insertaInicio(2);
@@ -125,8 +127,8 @@ public class ListaDoble extends ListaD{
         listad.insertaOrdenado(3);
         listad.insertaOrdenado(1);
         listad.insertaOrdenado(200);
-        listad.insertaOrdenado(60);*/        
+        listad.insertaOrdenado(60);       
         listad.imprimir();
-    }
+    }*/
     
 }

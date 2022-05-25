@@ -5,6 +5,8 @@
  */
 package Model.arbol.ListaLigada;
 
+import Model.Egresado;
+
 /**
  *
  * @author Jahir Gómez
@@ -15,14 +17,18 @@ public class NodoDoble extends Nodo{
     
     public NodoDoble(){}
     
-    public NodoDoble(Object nombreEgresado, NodoDoble siguiente, NodoDoble anterior){
-        this.nombreEgresado = nombreEgresado;
+    public NodoDoble(Egresado e, NodoDoble siguiente, NodoDoble anterior){
+        this.nombreEgresado = e.getName();
+        this.profesion = e.getProfesion();
+        this.promedio = e.getGrade();
         this.siguiente = siguiente;
         this.anterior = anterior;
     }
-    
-    public NodoDoble(Object nombreEgresado){
-        this.nombreEgresado = nombreEgresado;
+                    
+    public NodoDoble(Egresado e){
+        this.nombreEgresado = e.getName();
+        this.profesion = e.getProfesion();
+        this.promedio = e.getGrade();
         siguiente = anterior = null;
     }
 
@@ -53,7 +59,6 @@ public class NodoDoble extends Nodo{
     public void setAnterior(NodoDoble anterior) {
         this.anterior = anterior;
     }
-    
     
     
 }

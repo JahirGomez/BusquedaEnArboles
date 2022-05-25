@@ -5,13 +5,15 @@
  */
 package Model.arbol.ListaLigada;
 
+import Model.Egresado;
+
 /**
  *
  * @author Jahir Gómez
  */
 public abstract class Lista {
-    protected Nodo inicio;
-    protected Nodo ultimo;
+    public Nodo inicio;
+    public Nodo ultimo;
     protected String nombre;
     
     public Lista(){
@@ -23,8 +25,8 @@ public abstract class Lista {
         inicio = ultimo = null;
     }
     
-    public abstract void insertaInicio(Object nombreEgresado);
-    public abstract void insertaFinal(Object nombreEgresado);
+    public abstract void insertaInicio(Egresado nombreEgresado);
+    public abstract void insertaFinal(Egresado nombreEgresado);
     public abstract Object eliminaInicio();
     public abstract Object eliminaFinal();   
 

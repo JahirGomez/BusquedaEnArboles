@@ -1,20 +1,23 @@
 package Model.arbol;
 
+import Model.Egresado;
+import Model.arbol.ListaLigada.NodoDoble;
+
 public class NodoAVL extends NodoBin{
     protected int FE;
     protected NodoAVL padre;
 
     public NodoAVL(){}
     
-    public NodoAVL(Object o){
+    public NodoAVL(Egresado o){
         super(o);
     }
     
-    public NodoAVL(Object o,NodoAVL i, NodoAVL d){
+    public NodoAVL(Egresado o,NodoAVL i, NodoAVL d){
         super(o,d,i);
     }
     
-    public NodoAVL(Object o,NodoAVL i, NodoAVL d, NodoAVL p){
+    public NodoAVL(Egresado o,NodoAVL i, NodoAVL d, NodoAVL p){
         super(o,d,i);
         padre = p;
     }

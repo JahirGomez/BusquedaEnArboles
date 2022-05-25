@@ -1,17 +1,20 @@
 package Model.arbol;
 
+import Model.Egresado;
+import Model.arbol.ListaLigada.NodoDoble;
+
 public class NodoBin {
-    protected Object dato;
+    public Egresado dato;
     protected NodoBin izq;
     protected NodoBin der;
 
-    public NodoBin(Object dato, NodoBin izq, NodoBin der) {
+    public NodoBin(Egresado dato, NodoBin izq, NodoBin der) {
         this.dato = dato;
         this.izq = izq;
         this.der = der;
     }
 
-    public NodoBin(Object dato){
+    public NodoBin(Egresado dato){
        this(dato,null,null);
     }
     
@@ -54,7 +57,7 @@ public class NodoBin {
     /**
      * @param dato the dato to set
      */
-    public void setDato(Object dato) {
+    public void setDato(Egresado dato) {
         this.dato = dato;
     }
 

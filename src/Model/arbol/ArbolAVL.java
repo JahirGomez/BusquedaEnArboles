@@ -1,5 +1,7 @@
 package Model.arbol;
 
+import Model.Egresado;
+
 public class ArbolAVL {
     protected NodoAVL raiz;
       
@@ -7,7 +9,7 @@ public class ArbolAVL {
         raiz = null;
       }
       
-      public ArbolAVL(Object o){
+      public ArbolAVL(Egresado o){
         raiz = new NodoAVL(o);
       }
      
@@ -26,12 +28,12 @@ public class ArbolAVL {
              raiz.posOrden();
       }
       
-      public void insertar(Object o){
+      public void insertar(Egresado o){
       insertarOrdenado(raiz,o);
     }
       
-     private void insertarOrdenado(NodoAVL n, Object o){  
-    if ((int)o<(int)n.getDato()){
+     private void insertarOrdenado(NodoAVL n, Egresado o){  
+    if (o.getGrade()<n.dato.getGrade()){
        if (n.getIzq()==null){
            n.setIzq(new NodoAVL(o,null,null,n));
            recalcularFE(n);
@@ -40,7 +42,7 @@ public class ArbolAVL {
            insertarOrdenado((NodoAVL)n.getIzq(),o);
        }
     else{
-    if((int)o>(int)n.getDato()){
+    if(o.getGrade()>=n.dato.getGrade()){
       if (n.getDer()==null){
          n.setDer(new NodoAVL(o,null,null,n));
          recalcularFE(n);
@@ -243,7 +245,7 @@ public class ArbolAVL {
        R.setFE(0);
      }
      
-      public static void main(String[] args) {
+      /*public static void main(String[] args) {
       ArbolAVL arbol = new ArbolAVL(55); 
       arbol.insertar(34);
       arbol.insertar(23);
@@ -255,7 +257,7 @@ public class ArbolAVL {
       arbol.insertar(1000);    
       arbol.inOrden();
       
-      }
+      }*/
      
       
   }

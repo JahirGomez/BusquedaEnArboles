@@ -10,8 +10,8 @@ package Model.arbol.ListaLigada;
  * @author Jahir Gómez
  */
 public abstract class ListaD extends Lista{
-    protected NodoDoble inicio;
-    protected NodoDoble ultimo;
+    public NodoDoble inicio;
+    public NodoDoble ultimo;
     
     public boolean vacio(){
         return inicio == null;

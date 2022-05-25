@@ -10,34 +10,36 @@ package Model.arbol.ListaLigada;
  * @author Jahir Gómez
  */
 public class Nodo {
-    protected Object nombreEgresado;
-    protected Object promedio;
+    public String nombreEgresado;
+    public String profesion;
+    public int promedio;
     protected Nodo siguiente;
     
     public Nodo(){}
     
-    public Nodo(Object nombreEgresado){
+    public Nodo(String nombreEgresado){
         this.nombreEgresado = nombreEgresado;
         siguiente = null;
     }
     
-    public Nodo(Object nombreEgresado, Nodo siguiente, Object promedio){
+    public Nodo(String nombreEgresado, String profesion, int promedio, Nodo siguiente){
         this.nombreEgresado = nombreEgresado;
         this.siguiente = siguiente;
         this.promedio = promedio;
+        this.profesion = profesion;
     }
 
     /**
      * @return the nombreEgresado
      */
-    public Object getNombreEgresado() {
+    public String getNombreEgresado() {
         return nombreEgresado;
     }
 
     /**
      * @param nombreEgresado the nombreEgresado to set
      */
-    public void setNombreEgresado(Object nombreEgresado) {
+    public void setNombreEgresado(String nombreEgresado) {
         this.nombreEgresado = nombreEgresado;
     }
 
@@ -58,15 +60,39 @@ public class Nodo {
     /**
      * @return the promedio
      */
-    public Object getPromedio() {
+    public int getPromedio() {
         return promedio;
     }
 
     /**
      * @param siguiente the promedio to set
      */
-    public void setPromedio(Nodo siguiente) {
+    public void setPromedio(int promedio) {
         this.promedio = promedio;
+    }
+
+    /**
+     * @return the profesion
+     */
+    public String getProfesion() {
+        return profesion;
+    }
+
+    /**
+     * @param profesion the profesion to set
+     */
+    public void setProfesion(String profesion) {
+        this.profesion = profesion;
+    }
+    
+
+    @Override
+    public String toString() {
+        return "{" +
+            " nombreEgresado='" + getNombreEgresado() + "'" +
+            ", profesion='" + getProfesion() + "'" +
+            ", promedio='" + getPromedio() + "'" +
+            "}\n";
     }
     
 }
